@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warframe Promo Code Redeemer</title>
+    <style>
+        :root {
+            --color-bg-primary: #0a0e27;
+            --color-bg-secondary: #1a1f3a;
+            --color-primary: #ff6b35;
+            --color-primary-hover: #ff8555;
+            --color-text: #e0e0e0;
+            --color-text-secondary: #a0a0a0;
+            --color-success: #4caf50;
+            --color-error: #ff6b6b;
+            --color-border: #2a3050;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--color-bg-primary);
+            color: var(--color-text);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: var(--color-primary);
+            text-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
+        }
+
+        .info-text {
+            color: var(--color-text-secondary);
+            font-size: 0.95em;
+            margin-bottom: 20px;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px 15px;
+            background-color: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            color: var(--color-text);
+            font-size: 0.95em;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 8px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+        }
+
+        button:hover {
+            background-color: var(--color-primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background-color: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            color: var(--color-text);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-border);
+            border-color: var(--color-primary);
+        }
+
+        .category-section {
+            margin-bottom: 40px;
+        }
+
+        .category-title {
+            font-size: 1.5em;
+            color: var(--color-primary);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--color-primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .category-badge {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        .stat-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            padding: 10px 15px;
+            background-color: var(--color-bg-secondary);
+            border-left: 3px solid var(--color-primary);
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .stat-label {
+            color: var(--color-text-secondary);
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            color: var(--color-primary);
+            font-weight: 600;
+            font-size: 1.2em;
+        }
+
+        .codes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .code-btn {
+            padding: 12px;
+            background-color: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            color: var(--color-text);
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.85em;
+            transition: all 0.2s ease;
+            word-break: break-all;
+            white-space: normal;
+            line-height: 1.4;
+        }
+
+        .code-btn:hover {
+            border-color: var(--color-primary);
+            background-color: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+        }
+
+        .code-btn.expired {
+            opacity: 0.6;
+            border-style: dashed;
+        }
+
+        .code-btn.used {
+            background-color: #2a5a2a;
+            border-color: var(--color-success);
+            opacity: 0.8;
+            text-decoration: line-through;
+        }
+
+        .code-btn.used:hover {
+            background-color: #3a7a3a;
+            border-color: var(--color-success);
+        }
+
+        .used-count {
+            color: var(--color-success);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--color-text-secondary);
+            font-size: 1.1em;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--color-border);
+            color: var(--color-text-secondary);
+            font-size: 0.85em;
+        }
+
+        .success-message {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--color-success);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .redeem-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .redeem-modal.active {
+            display: flex;
+        }
+
+        .redeem-content {
+            background-color: var(--color-bg-secondary);
+            border: 2px solid var(--color-primary);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            max-width: 500px;
+            box-shadow: 0 8px 32px rgba(255, 107, 53, 0.4);
+        }
+
+        .redeem-code {
+            font-size: 2.5em;
+            color: var(--color-primary);
+            font-weight: bold;
+            margin: 20px 0;
+            font-family: monospace;
+            letter-spacing: 2px;
+            padding: 20px;
+            background-color: var(--color-bg-primary);
+            border-radius: 6px;
+        }
+
+        .redeem-progress {
+            font-size: 1.1em;
+            color: var(--color-text-secondary);
+            margin: 15px 0;
+        }
+
+        .redeem-instructions {
+            color: var(--color-text);
+            margin: 20px 0;
+            line-height: 1.8;
+            text-align: left;
+            background-color: var(--color-bg-primary);
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 3px solid var(--color-primary);
+        }
+
+        .code-display {
+            padding: 12px 16px;
+            background-color: var(--color-bg-primary);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .copy-btn-small {
+            padding: 6px 12px;
+            font-size: 0.8em;
+            background-color: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .copy-btn-small:hover {
+            background-color: var(--color-primary-hover);
+        }
+
+        .redeem-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .redeem-buttons button {
+            flex: 1;
+        }
+
+        .btn-skip {
+            background-color: var(--color-border);
+        }
+
+        .btn-skip:hover {
+            background-color: #3a4560;
+        }
+
+        .auth-modal {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .auth-modal.hidden {
+            display: none;
+        }
+
+        .auth-content {
+            background-color: var(--color-bg-secondary);
+            border: 2px solid var(--color-primary);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.5);
+        }
+
+        .auth-content h2 {
+            margin-top: 0;
+            margin-bottom: 30px;
+            color: var(--color-primary);
+            font-size: 1.8em;
+        }
+
+        .auth-input {
+            width: 100%;
+            padding: 12px 16px;
+            margin-bottom: 15px;
+            background-color: var(--color-bg-primary);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            color: var(--color-text);
+            font-size: 0.95em;
+            box-sizing: border-box;
+        }
+
+        .auth-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 8px rgba(255, 107, 53, 0.3);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .auth-buttons button {
+            flex: 1;
+            padding: 12px 20px;
+            font-size: 0.95em;
+        }
+
+        .user-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: var(--color-bg-secondary);
+            border-radius: 6px;
+            border-left: 3px solid var(--color-primary);
+        }
+
+        .user-info {
+            text-align: left;
+        }
+
+        .user-label {
+            color: var(--color-text-secondary);
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .user-name {
+            color: var(--color-primary);
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-top: 5px;
+        }
+
+        .logout-btn {
+            padding: 8px 16px;
+            background-color: var(--color-error);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .logout-btn:hover {
+            background-color: #ff5555;
+            transform: translateY(-2px);
+        }
+
+        .hidden-section {
+            display: none;
+        }
+
+        .unmark-btn {
+            background-color: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            color: var(--color-text);
+        }
+
+        .unmark-btn.active {
+            background-color: #ff4444;
+            border-color: #ff4444;
+            color: white;
+        }
+
+        .unmark-btn.active:hover {
+            background-color: #ff6666;
+            border-color: #ff6666;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-modal" id="authModal">
+        <div class="auth-content">
+            <h2>Warframe Redeemer</h2>
+            <input type="text" class="auth-input" id="authUsername" placeholder="Username" autocomplete="off">
+            <input type="password" class="auth-input" id="authPassword" placeholder="Password" autocomplete="off">
+            <div class="auth-buttons">
+                <button onclick="signup()" style="background-color: var(--color-primary);">Sign Up</button>
+                <button onclick="login()" class="btn-secondary">Log In</button>
+            </div>
+            <p style="margin-top: 20px; color: var(--color-text-secondary); font-size: 0.9em;">
+                💡 Create an account to track your redeemed codes per Warframe account
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>⚔️ Warframe Promo Code Redeemer</h1>
+            <p class="info-text">Click any code to open the Warframe redemption page. Codes may be expired or already used on your account.</p>
+            
+            <div class="user-section hidden-section" id="userSection">
+                <div class="user-info">
+                    <div class="user-label">Currently Logged In</div>
+                    <div class="user-name" id="userDisplay">Guest</div>
+                </div>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </header>
+
+        <div class="controls">
+            <input type="text" class="search-box" id="searchBox" placeholder="Search codes...">
+            <div class="btn-group">
+                <button onclick="startSequentialRedeem()">Sequential Redeem</button>
+                <button class="btn-secondary" onclick="clearSearch()">Clear</button>
+                <button class="btn-secondary" onclick="copyAllCodes()">Copy All</button>
+                <button class="unmark-btn btn-secondary" id="unmarkBtn" onclick="toggleUnmarkMode()">Unmark Mode</button>
+                <button class="btn-secondary" onclick="resetUsedCodes()">Reset Used</button>
+            </div>
+        </div>
+
+        <div class="stat-group">
+            <div class="stat-item">
+                <div class="stat-label">Active Codes</div>
+                <div class="stat-value" id="activeCount">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Expired Codes</div>
+                <div class="stat-value" id="expiredCount">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Visible</div>
+                <div class="stat-value" id="visibleCount">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Used</div>
+                <div class="stat-value used-count" id="usedCount">0</div>
+            </div>
+        </div>
+
+        <div id="categoriesContainer"></div>
+
+        <div class="no-results" id="noResults" style="display: none;">
+            No codes match your search.
+        </div>
+
+        <div class="footer">
+            <p>💡 Tip: Codes usually have an expiration date and may be tied to specific accounts. Some codes are platform-specific.</p>
+        </div>
+    </div>
+
+    <div class="success-message" id="successMessage"></div>
+
+    <div class="redeem-modal" id="redeemModal">
+        <div class="redeem-content">
+            <h2 style="margin-top: 0;">Code Redemption Helper</h2>
+            <div class="redeem-code" id="currentCode">CODE</div>
+            <div class="redeem-progress" id="redeemProgress">Code 1 of 286</div>
+            <div class="redeem-instructions">
+                <strong>📋 Instructions:</strong><br>
+                A new tab will open with the code <strong>already filled in</strong>.<br>
+                Just click the <strong>"Redeem"</strong> button on the Warframe website!
+            </div>
+            <div class="code-display">
+                <span id="displayCode">CODE</span>
+                <button class="copy-btn-small" onclick="copyCurrentCode()">Copy</button>
+            </div>
+            <div class="redeem-buttons">
+                <button onclick="markUsed()">✓ Mark & Next</button>
+                <button class="btn-skip" onclick="skipCode()">⊘ Skip</button>
+                <button class="btn-skip" onclick="stopRedeeming()">Stop</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const codeData = {
+            'Active Codes': {
+                'Latest Codes': ["MOVEMBER2025", "QTCC10KBUNDLE", "QTCC5KREWARD", "BSD-WARFRAME", "GOLDEN"],
+                'Creator Glyph Codes': [
+                    "2020ZERO", "6IXGATSU", "ADMIRALBAHROO", "AEONKNIGHT86", "AESOPYOLIAN",
+                    "AGAYGUYPLAYS", "AKARI", "ALAINLOVE", "ALEXANDERDARIO", "AMPROV",
+                    "ANGRYUNICORN", "ANJETCAT", "ANNOYINGKILLAH", "ARGONSIX", "ASHISOGITENNO",
+                    "ASURATENSHI", "AUNTIETAN", "AVELNA", "AZNITROUS", "BIGJIMID", "BLACKNATO974",
+                    "BLACKONI", "BLAZINGCOBALT", "BLUEBERRYCAT", "BLUYAYOGAMER", "BRAZILCOMMUNITYDISCORD",
+                    "BRICKY", "BROZIME", "BUFF00N", "BURNBXX", "BWANA", "CALAMITYDEATH", "CALEYEMERALD",
+                    "CANOFCRAIG", "CARCHARA", "CASARDIS", "CEPHALONSQUARED", "CGSKNACKIE", "CHACYTAY",
+                    "CHAR", "CHELESTRA", "CLEONATURIN", "CODOMA", "COHHCARNAGE", "COLDSCAR", "COLDTIGER",
+                    "CONCLAVEDISCORD", "CONFUSEDWARFRAME", "CONQUERA2024", "COPYKAVAT", "CPT_KIM",
+                    "CROWDI", "CRUSADER", "DAIDAIKIRI", "DANIELTHEDEMON", "DANILY", "DARIKAART",
+                    "DASTERCREATIONS", "DATLOON", "DAYJOBO", "DEATHMAGGOT", "DEBBYSHEEN", "DEEJAYKNIGHT",
+                    "DEEPBLUEBEARD", "DESTROHIDO", "DEUCETHEGAMER", "DEUS", "DILLYFRAME", "DIMITRIV2",
+                    "DISFUSIONAL", "DJTECHLIVE", "DKDIAMANTES", "DNEXUS", "EDRICK", "EDUIY16",
+                    "ELDANKER", "ELGRINEEREXILIADO", "ELICEGAMEPLAY", "ELNORAELEO", "EMOVJ", "EMPYREANCAP",
+                    "ENDOTTI_", "ETERION", "EVECAPTURA", "EXTRACREDITS", "FACELESSBEANIE", "FASHIONFRAMEISENDGAME",
+                    "FATED2PERISH", "FATEDSCHRONICLES", "FEELLIKEAPLAYER", "FERREUSDEMON", "FINLAENA",
+                    "FLOOFYDWAGON", "FR4G-TP", "FROSTYNOVAPRIME", "FROZENBALLZ", "GARA", "GASTEL",
+                    "GERMANCOMMUNITYDISCORD", "GINGY", "GLAMSHATTERSKULL", "GRINDHARDSQUAD",
+                    "H3DSH0T", "HAPPINESSDARK", "HENCHANDSCRAP", "HOMIINVOCADO", "HOTSHOMSTORIES",
+                    "HYDROXATE", "IFLYNN", "IKEDO", "IM7HECLOWN", "INFERNOTHEFIRELORD", "INFODIVERSAO",
+                    "ITSJUSTTOE", "IWOPLY", "JAMIEVOICEOVER", "JESSITHROWER", "JOEYZERO", "JORIALE",
+                    "JUSTHAILEY", "JUSTRLC", "K1LLERBARBIE", "KAVATSSCHROEDINGER", "KENSHINWF",
+                    "KINGGOTHALION", "KIRARAHIME", "KIRDY", "KIWAD", "KR1PTONPLAYER", "KRETDUY",
+                    "KYAII", "L1FEWATER", "LADYNOVITA", "LADYTHELADDY", "LAURIEEELG", "LEODOODLING",
+                    "LEYZARGAMINGVIEWS", "LIGHTMICKE", "LIGHTNINGCOSPLAY", "LILLEXI", "LUCIANPLAYSALLDAY",
+                    "LYNXARIA", "MACHO", "MADFURY", "MAKARIMORPH", "MAOMIX", "MCGAMERCZ", "MCMONKEYS",
+                    "MECORE", "MEDUSACAPTURES", "MHBLACKY", "MICHELPOSTMA", "MIKETHEBARD", "MISSFWUFFY",
+                    "MISTERGAMER", "MJIKTHIZE", "MOGAMU", "MRROADBLOCK", "MRSTEELWAR", "MRWARFRAMEGUY",
+                    "MYLAH", "NELOSART", "NEONESS007", "NOMNOM", "NOSYMPATHYY", "NP161", "ODDIEOWL",
+                    "OOSIJ", "ORIGINALWICKEDFUN", "ORPHEUSDELUXE", "OTTOFYRE", "OZKU", "PAMMYJAMMY",
+                    "PANDAAHH", "PAPATLION", "PARVOS", "PHONGFU", "PLAGUEDIRECTOR", "PLEXICOSPLAY",
+                    "POKKETNINJA", "POSTITV", "PRIDE2024", "PRIDE2025", "PRIMEDAVERAGE", "PROFESSORBROMAN",
+                    "PURKINJE", "PURPLEFLURP", "PYRAH", "PYRRHICSERENITY", "QUADLYSTOP", "R/WARFRAME",
+                    "RAGINGTERROR", "RAHETALIUS", "RAHNY", "RAINBOWWAFFLES", "RELENTLESSZEN", "RELIQUARY",
+                    "RETROALCHEMIST", "REYGANSO", "RICKUNPRIME", "RIKENZ", "RIPPZ0R", "RITENS", "ROYALPRAT",
+                    "RUSTYFIN", "RWERESS", "SAPMATIC", "SARAHTSANG", "SCALLION", "SCARLETMOON", "SEARYN",
+                    "SECRIOTMCFLY", "SERDARSARI", "SHARLAZARD", "SHENZHAO", "SHERPA", "SHINOBIFUFU",
+                    "SHUL", "SIEJOUMBRA", "SILLFIX", "SILENTMASHIKO", "SILLFX", "SILVERVALE", "SKILLUP",
+                    "SMOODIE", "SN0WRC", "SPACEWAIFU", "SPANDY", "SPECIALEFFECT", "STALLORDD",
+                    "STR8OPTIROYAL", "STRIPPIN", "STUDIOCYEN", "TACTICALPOTATO", "TANCHAN", "TBGKARU",
+                    "TEAWREX", "TECHROT-MACTICS", "TENNOFOREVER", "THEGAMIO", "THEKENGINEER", "THEPANDA",
+                    "TINBEARS", "TIOMARIO", "TIORAMON", "TORTOISE", "TOTALN3WB", "TOXICKTOE", "TRASHFRAME",
+                    "TRIBUROS", "TWILA", "UNREALYUKI", "UREIFEN", "VAMP6X6X6X", "VARLINATOR", "VASHCOWAII",
+                    "VASHKA", "VECTOR", "VERNOC", "VEROZ", "VOIDFISSUREBR", "VOLI", "VOLTTHEHERO",
+                    "VVHITEANGEL", "WALTERDV", "WANDERBOTS", "WARFRAMECOMMUNITYDISCORD", "WARFRAMEFLO",
+                    "WARFRAMERUNWAY", "WARFRAMEWIKI", "WEALWEST", "WIDESCREENJOHN", "WOXLI", "XBOCCHANVTX",
+                    "XENOGELION", "XXVAMPIXX", "YOURLUCKYCLOVER", "ZARIONIS", "ZXPFER"
+                ]
+            },
+            'Expired Codes': {
+                'Old Codes': [
+                    "1999-QUINCY", "1999-VOICEPLAY", "BrotherDaz", "Conquera2022", "Conquera2023",
+                    "HACKSMITH-BOT", "DEPTHS", "DUVIRI-WARFRAME1", "DUVIRI-WARFRAME2", "DUVIRI-BARO",
+                    "DUVIRI-DRIFTER", "DUVIRI-EXCALIBUR", "DUVIRI-FURZE", "DUVIRI-RAILJACK", "DUVIRI-STYANAX",
+                    "DUVIRI-VOID", "Emojv", "EmpryeanCap", "HappinesDark", "HokuProps", "IISlip",
+                    "Koumei-FHF8U", "LiliLexi", "MOVEMBER2024", "NineYear22", "Pride2022", "PRIDE2023",
+                    "QTCC", "QTCC2", "RebelDustyPinky", "SILLS", "TANANDRA", "TH3GR8D3SP41R", "Vamppire"
+                ]
+            }
+        };
+
+        const searchBox = document.getElementById('searchBox');
+        const categoriesContainer = document.getElementById('categoriesContainer');
+        const noResultsEl = document.getElementById('noResults');
+        let activeCodesList = [];
+        let expiredCodesList = [];
+        let allCodes = [];
+        let redeemIndex = 0;
+        let isRedeeming = false;
+        let currentFilteredList = [];
+        let usedCodes = new Set();
+        let unmarkMode = false;
+        let currentUser = null;
+        let accounts = {};
+
+        function loadUsedCodes() {
+            const stored = localStorage.getItem('warframeUsedCodes');
+            if (stored) {
+                try {
+                    usedCodes = new Set(JSON.parse(stored));
+                } catch (e) {
+                    usedCodes = new Set();
+                }
+            }
+        }
+
+        function saveUsedCodes() {
+            localStorage.setItem('warframeUsedCodes', JSON.stringify(Array.from(usedCodes)));
+        }
+
+        function loadAccounts() {
+            const stored = localStorage.getItem('warframeAccounts');
+            if (stored) {
+                try {
+                    accounts = JSON.parse(stored);
+                } catch (e) {
+                    accounts = {};
+                }
+            }
+            const loggedIn = localStorage.getItem('warframeCurrentUser');
+            if (loggedIn && accounts[loggedIn]) {
+                currentUser = loggedIn;
+                usedCodes = new Set(accounts[loggedIn].usedCodes || []);
+                updateUIForLoggedIn();
+            }
+        }
+
+        function saveAccounts() {
+            localStorage.setItem('warframeAccounts', JSON.stringify(accounts));
+        }
+
+        function saveUserCodes() {
+            if (currentUser && accounts[currentUser]) {
+                accounts[currentUser].usedCodes = Array.from(usedCodes);
+                saveAccounts();
+            } else {
+                saveUsedCodes();
+            }
+        }
+
+        function initializeCodeLists() {
+            activeCodesList = [];
+            expiredCodesList = [];
+            allCodes = [];
+
+            for (const [category, subcats] of Object.entries(codeData)) {
+                for (const [subcat, codes] of Object.entries(subcats)) {
+                    if (category === 'Active Codes') {
+                        activeCodesList.push(...codes);
+                        allCodes.push(...codes);
+                    } else {
+                        expiredCodesList.push(...codes);
+                        allCodes.push(...codes);
+                    }
+                }
+            }
+        }
+
+        function renderCategories(filter = '') {
+            categoriesContainer.innerHTML = '';
+            let hasResults = false;
+
+            for (const [category, subcats] of Object.entries(codeData)) {
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'category-section';
+                let categoryHasResults = false;
+                let categoryHTML = `<h2 class="category-title">
+                    ${category === 'Active Codes' ? '✓' : '⊘'} ${category}
+                    <span class="category-badge">${category === 'Active Codes' ? activeCodesList.length : expiredCodesList.length}</span>
+                </h2>`;
+
+                for (const [subcat, codes] of Object.entries(subcats)) {
+                    const filtered = codes.filter(code => 
+                        code.toUpperCase().includes(filter.toUpperCase())
+                    );
+
+                    if (filtered.length > 0) {
+                        categoryHasResults = true;
+                        hasResults = true;
+                        categoryHTML += `<div>
+                            <h3 style="color: var(--color-text-secondary); margin: 15px 0 10px 0; font-size: 1.1em;">${subcat}</h3>
+                            <div class="codes-grid">`;
+                        
+                        filtered.forEach(code => {
+                            const isExpired = category === 'Expired Codes';
+                            const isUsed = usedCodes.has(code);
+                            categoryHTML += `<button class="code-btn ${isExpired ? 'expired' : ''} ${isUsed ? 'used' : ''}" 
+                                onclick="handleCodeClick(event, '${code}')" 
+                                title="Click to open Warframe or unmark (if Unmark Mode ON)">
+                                ${code}
+                            </button>`;
+                        });
+                        categoryHTML += `</div></div>`;
+                    }
+                }
+
+                if (categoryHasResults) {
+                    categoryDiv.innerHTML = categoryHTML;
+                    categoriesContainer.appendChild(categoryDiv);
+                }
+            }
+
+            updateStats(filter);
+            noResultsEl.style.display = hasResults ? 'none' : 'block';
+        }
+
+        function updateStats(filter = '') {
+            const filtered = allCodes.filter(code => 
+                code.toUpperCase().includes(filter.toUpperCase())
+            );
+
+            document.getElementById('activeCount').textContent = activeCodesList.length;
+            document.getElementById('expiredCount').textContent = expiredCodesList.length;
+            document.getElementById('visibleCount').textContent = filtered.length;
+            document.getElementById('usedCount').textContent = usedCodes.size;
+        }
+
+        function openCode(code) {
+            if (unmarkMode) {
+                usedCodes.delete(code);
+                saveUserCodes();
+                renderCategories(searchBox.value);
+                showSuccess(`Unmarked: ${code}`);
+            } else {
+                window.open(`https://www.warframe.com/promocode?code=${code}`, '_blank');
+                usedCodes.add(code);
+                saveUserCodes();
+                renderCategories(searchBox.value);
+                showSuccess(`Opened: ${code} (marked as used)`);
+            }
+        }
+
+        function handleCodeClick(event, code) {
+            event.preventDefault();
+            event.stopPropagation();
+            openCode(code);
+        }
+
+        function clearSearch() {
+            searchBox.value = '';
+            renderCategories();
+        }
+
+        function startSequentialRedeem() {
+            const filtered = allCodes.filter(code => 
+                code.toUpperCase().includes(searchBox.value.toUpperCase())
+            );
+            
+            if (filtered.length === 0) {
+                showSuccess('No codes to redeem!');
+                return;
+            }
+
+            currentFilteredList = filtered;
+            redeemIndex = 0;
+            
+            while (redeemIndex < currentFilteredList.length && 
+                   usedCodes.has(currentFilteredList[redeemIndex])) {
+                redeemIndex++;
+            }
+            
+            if (redeemIndex >= currentFilteredList.length) {
+                showSuccess('All codes in this search are already used!');
+                return;
+            }
+
+            isRedeeming = true;
+            showRedeemModal();
+        }
+
+        function showRedeemModal() {
+            const modal = document.getElementById('redeemModal');
+            const codeEl = document.getElementById('currentCode');
+            const displayEl = document.getElementById('displayCode');
+            const progressEl = document.getElementById('redeemProgress');
+            
+            if (redeemIndex < currentFilteredList.length) {
+                const code = currentFilteredList[redeemIndex];
+                codeEl.textContent = code;
+                displayEl.textContent = code;
+                progressEl.textContent = `Code ${redeemIndex + 1} of ${currentFilteredList.length}`;
+                modal.classList.add('active');
+                window.open(`https://www.warframe.com/promocode?code=${code}`, '_blank');
+            } else {
+                modal.classList.remove('active');
+                isRedeeming = false;
+                renderCategories(searchBox.value);
+                showSuccess(`Finished! Marked ${redeemIndex} codes.`);
+            }
+        }
+
+        function markUsed() {
+            const code = currentFilteredList[redeemIndex];
+            window.open(`https://www.warframe.com/promocode?code=${code}`, '_blank');
+            usedCodes.add(code);
+            saveUserCodes();
+            showSuccess(`Marked "${code}" as used!`);
+            nextCode();
+        }
+
+        function nextCode() {
+            redeemIndex++;
+            showRedeemModal();
+        }
+
+        function resetUsedCodes() {
+            if (confirm('Clear all used code markers? This cannot be undone.')) {
+                usedCodes.clear();
+                saveUserCodes();
+                renderCategories(searchBox.value);
+                updateStats(searchBox.value);
+                showSuccess('Used codes cleared!');
+            }
+        }
+
+        function signup() {
+            const username = document.getElementById('authUsername').value.trim();
+            const password = document.getElementById('authPassword').value.trim();
+
+            if (!username || !password) {
+                showSuccess('Username and password required!');
+                return;
+            }
+            if (username.length < 3) {
+                showSuccess('Username must be at least 3 characters');
+                return;
+            }
+            if (password.length < 4) {
+                showSuccess('Password must be at least 4 characters');
+                return;
+            }
+            if (accounts[username]) {
+                showSuccess('Username already exists!');
+                return;
+            }
+
+            accounts[username] = { password, usedCodes: [] };
+            saveAccounts();
+            showSuccess('Account created! Logging in...');
+            setTimeout(() => login(), 500);
+        }
+
+        function login() {
+            const username = document.getElementById('authUsername').value.trim();
+            const password = document.getElementById('authPassword').value.trim();
+
+            if (!username || !password) {
+                showSuccess('Username and password required!');
+                return;
+            }
+            if (!accounts[username]) {
+                showSuccess('Account not found!');
+                return;
+            }
+            if (accounts[username].password !== password) {
+                showSuccess('Incorrect password!');
+                return;
+            }
+
+            currentUser = username;
+            localStorage.setItem('warframeCurrentUser', username);
+            usedCodes = new Set(accounts[username].usedCodes || []);
+            document.getElementById('authModal').classList.add('hidden');
+            document.getElementById('authUsername').value = '';
+            document.getElementById('authPassword').value = '';
+            updateUIForLoggedIn();
+            renderCategories(searchBox.value);
+            showSuccess(`Welcome back, ${username}!`);
+        }
+
+        function logout() {
+            if (confirm('Log out?')) {
+                currentUser = null;
+                localStorage.removeItem('warframeCurrentUser');
+                usedCodes.clear();
+                document.getElementById('authModal').classList.remove('hidden');
+                document.getElementById('userSection').classList.add('hidden-section');
+                document.getElementById('authUsername').value = '';
+                document.getElementById('authPassword').value = '';
+                renderCategories('');
+                showSuccess('Logged out!');
+            }
+        }
+
+        function updateUIForLoggedIn() {
+            document.getElementById('authModal').classList.add('hidden');
+            document.getElementById('userSection').classList.remove('hidden-section');
+            document.getElementById('userDisplay').textContent = currentUser;
+        }
+
+        function skipCode() {
+            redeemIndex++;
+            const modal = document.getElementById('redeemModal');
+            const codeEl = document.getElementById('currentCode');
+            const displayEl = document.getElementById('displayCode');
+            const progressEl = document.getElementById('redeemProgress');
+            
+            if (redeemIndex < currentFilteredList.length) {
+                const code = currentFilteredList[redeemIndex];
+                codeEl.textContent = code;
+                displayEl.textContent = code;
+                progressEl.textContent = `Code ${redeemIndex + 1} of ${currentFilteredList.length}`;
+                modal.classList.add('active');
+            } else {
+                modal.classList.remove('active');
+                isRedeeming = false;
+                renderCategories(searchBox.value);
+                showSuccess(`Finished! Marked ${redeemIndex} codes.`);
+            }
+        }
+
+        function stopRedeeming() {
+            document.getElementById('redeemModal').classList.remove('active');
+            isRedeeming = false;
+            renderCategories(searchBox.value);
+            showSuccess(`Stopped at code ${redeemIndex}.`);
+        }
+
+        function copyCurrentCode() {
+            const code = document.getElementById('currentCode').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                showSuccess('Code copied to clipboard!');
+            });
+        }
+
+        function copyAllCodes() {
+            const text = allCodes.join('\n');
+            navigator.clipboard.writeText(text).then(() => {
+                showSuccess('All codes copied to clipboard!');
+            });
+        }
+
+        function showSuccess(message) {
+            const msg = document.getElementById('successMessage');
+            msg.textContent = message;
+            msg.classList.add('show');
+            setTimeout(() => msg.classList.remove('show'), 3000);
+        }
+
+        function toggleUnmarkMode() {
+            unmarkMode = !unmarkMode;
+            const btn = document.getElementById('unmarkBtn');
+            if (unmarkMode) {
+                btn.classList.add('active');
+                showSuccess('Unmark Mode: ON - Click codes to unmark them');
+            } else {
+                btn.classList.remove('active');
+                showSuccess('Unmark Mode: OFF - Click codes to open Warframe');
+            }
+        }
+
+        searchBox.addEventListener('input', (e) => {
+            renderCategories(e.target.value);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!isRedeeming) return;
+            if (e.key === 'Enter' || e.key === 'n' || e.key === 'N') {
+                nextCode();
+            } else if (e.key === 's' || e.key === 'S') {
+                skipCode();
+            } else if (e.key === 'Escape') {
+                stopRedeeming();
+            }
+        });
+
+        initializeCodeLists();
+        loadAccounts();
+        loadUsedCodes();
+        renderCategories();
+    </script>
+</body>
+</html>
